@@ -1,0 +1,21 @@
+.navbar{
+    background-color: navy;
+    overflow: hidden;
+}
+.choice{
+    margin-left: 3%;
+    margin-right: 2%;
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.choice:hover{
+    background-color: rgb(59, 59, 152);
+    color: whitesmoke;
+}
+
