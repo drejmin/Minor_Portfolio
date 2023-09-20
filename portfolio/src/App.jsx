@@ -17,11 +17,11 @@ function App() {
       </Routes>
       </>
 
-      <header className="App-header">
-          <h1>Hey, I'm DeAndre! Welcome to my Portfolio!</h1>
-      </header>
 
       <body>
+        <header className="App-header">
+            <h1>Hey, I'm DeAndre! Welcome to my Portfolio!</h1>
+        </header>
         <section id="contact">
           <h2>Contact</h2>
           <div>
