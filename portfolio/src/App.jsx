@@ -21,22 +21,17 @@ function App() {
           <h1>Hey, I'm DeAndre! Welcome to my Portfolio!</h1>
       </header>
 
-      <header >
-
       <body>
-        
-        
-        
-        
         <section id="contact">
           <h2>Contact</h2>
-          <p>You can reach me at <a href="mailto:deandremi@yahoo.com">deandremi@yahoo.com</a></p>
-          <p>Check out my Git at <a href="https://github.com/drejmin">GitHub</a></p>
-          <p>Search my LinkedIn at <a href="www.linkedin.com/in/deandre-minor92">LinkedIn</a></p>
+          <div>
+            <a href="mailto:deandremi@yahoo.com" ><img src="portfolio/src/Components/Images/Email-Logo-No-Background.jpg" alt='icon'/></a>
+            <a href="https://github.com/drejmin"><img src="portfolio/src/Components/Images/GitHub-Logo.png" alt='icon'/></a>
+            <a href="www.linkedin.com/in/deandre-minor92"><img src="portfolio/src/Components/Images/linkedin-png-linkedin-icon-1600.png" alt='icon'/></a>
+          </div>
         </section>
-
       </body>
-            </header>
+      
     </main>
   );
 }
