@@ -5,7 +5,7 @@
 }
 
 .skills{
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-items:  center;
     margin-top: 3%;
@@ -21,6 +21,7 @@
     animation-fill-mode: linear forwards; 
 
   }
+
 .skills__skill{
     border: 4px solid darkgrey;
     border-radius: 12px;
@@ -33,6 +34,10 @@
     width: 200px;
     text-align: center;
     padding-block-end: auto;
+}
+
+.skills__skill:hover{
+    background-color: lightblue;
 }
 
 .progressBar {
