@@ -1,0 +1,30 @@
+.project{
+    border: 1px solid darkgrey;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.2),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 2%;
+    display: block;
+    width: 80%;
+    text-align: center;
+    padding-block-end: auto;
+    margin-left: 7%;
+}
+
+.project>h3{
+    margin:3px;
+    align-items: center;
+    color: navy;
+    
+}
+
+.project>p{
+    margin-bottom: 2%;
+}
+
+.project:hover{
+    background-color: lightblue;
+}

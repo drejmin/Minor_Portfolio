@@ -1,3 +1,5 @@
+import './ProjectsPage.css';
+
 export default function ProjectsPage(){
     return (
         <main>
@@ -14,8 +16,8 @@ export default function ProjectsPage(){
             </p>
           </article>
           <article class="project">
-            <h3><a href="https://notes-on-notes-036102fff03f.herokuapp.com/notes">Notes on Notes</a></h3>
-            <p>Notes on notes is a sharing app that allows users to upload, search, create, and view notes 
+            <h3><a  href="https://notes-on-notes-036102fff03f.herokuapp.com/notes">Notes on Notes</a></h3>
+            <p >Notes on notes is a sharing app that allows users to upload, search, create, and view notes 
               and share them with other users. The site uses Google Oauth for user login, mongodb for data 
               storage and express js for both the front and backend. It can log users in and store data, allow 
               the upload of images for notes and allow the creation of groups. The app is a work in progress and 
