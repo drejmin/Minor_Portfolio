@@ -25,10 +25,10 @@ function App() {
       <section id="contact">
         <h2>Contact</h2>
         <div class ='logos'>
-            <a href="https://docs.google.com/document/d/1IG3LCk6lxiGOLJM3HiRph8jTf7U4lWoczZCQMlfMTaE/edit?usp=sharing" ><img class = 'logo' src={downloadIcon} alt='download icon'/></a>
-            <a href="mailto:deandremi@yahoo.com" ><img class = 'logo' src={emailLogo} alt='email icon'/></a>
-            <a href="https://github.com/drejmin"><img class = 'logo' src={GitHubLogo} alt='github icon'/></a>
-            <a href="www.linkedin.com/in/deandre-minor92"><img class = 'logo' src={linkedinLogo} alt='linkedin icon'/></a>
+            <a href="https://docs.google.com/document/d/1IG3LCk6lxiGOLJM3HiRph8jTf7U4lWoczZCQMlfMTaE/edit?usp=sharing" target="_blank" rel='noreferrer'><img class = 'logo' src={downloadIcon} alt='download icon'/></a>
+            <a href="mailto:deandremi@yahoo.com" target="_blank" rel='noreferrer'><img class = 'logo' src={emailLogo} alt='email icon'/></a>
+            <a href="https://github.com/drejmin" target="_blank" rel='noreferrer'><img class = 'logo' src={GitHubLogo} alt='github icon'/></a>
+            <a href={"http://www.linkedin.com/in/deandre-minor92"} target="_blank" rel='noreferrer'><img class = 'logo' src={linkedinLogo} alt='linkedin icon'/></a>
         </div>
       </section>
     </main>
