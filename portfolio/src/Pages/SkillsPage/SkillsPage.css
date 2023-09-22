@@ -12,6 +12,7 @@
     margin: 3% 7% 3% 7%;
     align-content: center;
     align-self: center;
+    justify-content: center;
 }
 
 .progress {

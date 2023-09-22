@@ -3,9 +3,7 @@ import './AboutPage.css';
 export default function AboutPage (){
     return(
         <main>
-            <h2>About Me</h2>
-            <br></br>
-            <br></br>
+            <header class ='content-title'>About Me</header>
             <section class = 'aboutMe'>
             <p>
                 Hey welcome to my page I'm glad that you stopped by! 
@@ -34,7 +32,7 @@ export default function AboutPage (){
                 <br></br>
                 <br></br>
                 Outside of coding you can find me with my other hobbies such as:
-                <ul>
+                <ul class='list'>
                     <li>Time with Family</li>
                     <li>Watching Movies</li>
                     <li>Playing Sports or Exercising</li>
