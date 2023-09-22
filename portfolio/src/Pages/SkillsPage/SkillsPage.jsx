@@ -4,7 +4,7 @@ export default function SkillsPage(){
     return (
         <main>
             <div class="content-skills">
-                    <h3 class="content-title">My Skills</h3>
+                    <header class="content-title">My Skills</header>
                     <div class="skills">
                         <div class="skills__skill">JavaScript <progress class = 'progress'id="progressBar" value="60" max="100"></progress></div>
                         <div class="skills__skill">HTML <progress class = 'progress'id="progressBar" value="58" max="100"></progress></div>
