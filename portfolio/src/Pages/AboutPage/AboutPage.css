@@ -9,8 +9,10 @@
     margin: 3% 7% 3% 7%;
     width: 80%;
     text-align: center;
-    padding-block-end: auto;
-}
+    padding-block-end: fit-content;
+    height: fit-content;
+    
+}   
 
 .list li{
     list-style-type: none;

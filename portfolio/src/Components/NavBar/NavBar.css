@@ -1,20 +1,83 @@
-.navbar{
+/* Universal Styles */
+.navbar {
     background-color: navy;
     overflow: hidden;
-}
-.choice{
-    margin-left: 3%;
-    margin-right: 2%;
-    display: inline-flex;
-    color:white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 40px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.choice:hover{
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Changed to flex for horizontal layout */
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.nav-list.active {
+    display: flex; /* Ensure it's flex when active */
+}
+
+.choice {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 14px 16px;
+    display: block;
+}
+
+.choice:hover {
     background-color: rgb(59, 59, 152);
     color: whitesmoke;
 }
 
+/* Desktop View */
+@media (min-width: 769px) {
+    .choice {
+        margin-left: 6%;
+        margin-right: 6%;
+        text-align: center;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide by default on mobile */
+    }
+
+    .nav-list.active {
+        display: flex; /* Show when active */
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .choice {
+        text-align: left;
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: inline-block;
+        align-items: flex-start;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #fff;
+    }
+}

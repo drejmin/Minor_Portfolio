@@ -36,7 +36,7 @@
                 inset 0 -8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
     margin: 1%;
-    width: 200px;
+    width: 20%;
     text-align: center;
     padding-block-end: auto;
 }
@@ -46,6 +46,7 @@
 }
 
 #progressBar {
+    animation-name: fadeIn;
     height: 20px;
     border-radius: 12px;
     position: relative;

@@ -9,6 +9,35 @@ import downloadIcon from './Components/Images/downloadLogo.png';
 import emailLogo from './Components/Images/emailLogo.png';
 import GitHubLogo from './Components/Images/GitHubLogo.png';
 import linkedinLogo from './Components/Images/linkedinLogo.png';
+// import React, {useRef, useEffect} from 'react';
+
+// const SkillsSection = () =>{
+//     const sectionRef = useRef(null);}
+
+
+//     useEffect(() => {
+//         const observer = new IntersectionObserver(
+//         (entries, observer) => {
+//             entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add('animate');
+//                 observer.unobserve(entry.target); // Optional: Stop observing after animation
+//             }
+//             });
+//         },
+//         { threshold: 0.3 } // Trigger when 50% of the item is visible
+//         );
+    
+//         if (sectionRef.current) {
+//         observer.observe(sectionRef.current);
+//         }
+    
+//         return () => {
+//         if (sectionRef.current) {
+//             observer.disconnect();
+//         }
+//         };
+//     }, []);
 
 function App() {
   return (
@@ -22,6 +51,9 @@ function App() {
           <Route path="/ProjectsPage" element={<ProjectsPage/>} />
       </Routes>
       </>
+      <section id="ProjectsPage">{<ProjectsPage/>}</section>
+      <section id="SkillsPage">{<SkillsPage/>}</section>
+      <section id="AboutPage">{<AboutPage/>}</section>
       <section id="contact">
         <h2>Contact</h2>
         <div class ='logos'>
