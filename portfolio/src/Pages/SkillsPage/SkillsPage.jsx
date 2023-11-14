@@ -36,11 +36,21 @@ export default function SkillsPage() {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        const newVisibleSkills = new Set(visibleSkills);
+        let changed = false;
+
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
-            setVisibleSkills(prevVisibleSkills => new Set(prevVisibleSkills.add(index)));
+            if (!newVisibleSkills.has(index)) {
+              newVisibleSkills.add(index);
+              changed = true;
+            }
           }
         });
+
+        if (changed) {
+          setVisibleSkills(newVisibleSkills);
+        }
       },
       { threshold: 0.5 }
     );
@@ -51,7 +61,6 @@ export default function SkillsPage() {
       }
     });
 
-    // Cleanup function using the local variable
     return () => {
       currentSkillsRef.forEach(ref => {
         if (ref.current) {
@@ -59,7 +68,7 @@ export default function SkillsPage() {
         }
       });
     };
-  }, []);
+}, [visibleSkills]); // Add visibleSkills as a dependency
 
   return (
     <main>
