@@ -1,26 +1,20 @@
-.aboutMe{
+.aboutMe {
     border: 1px solid darkgrey;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-                0 8px 16px rgba(0, 0, 0, 0.2),
-                inset 0 -4px 8px rgba(0, 0, 0, 0.1),
-                inset 0 -8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.2),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1), inset 0 -8px 16px rgba(0, 0, 0, 0.2);
     padding: 3%;
-    margin: 3% 7% 3% 7%;
-    width: 80%;
+    margin: 3% 7%;
     text-align: center;
-    padding-block-end: fit-content;
     height: fit-content;
-    
 }   
 
-.list li{
+.list li {
     list-style-type: none;
 }
 
-.content-title{
+.content-title {
     font-size: x-large;
-    font-style: bold;
+    font-weight: bold;
     margin: 4%;
-
 }

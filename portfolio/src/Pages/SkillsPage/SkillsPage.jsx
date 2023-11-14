@@ -1,33 +1,82 @@
+import React, { useEffect, useRef, useState } from 'react';
 import './SkillsPage.css';
 
-export default function SkillsPage(){
-    return (
-        <main>
-            <div class="content-skills">
-                    <header class="content-title">Skills</header>
-                    <div class="skills">
-                        <div class="skills__skill">JavaScript <progress class = 'progress'id="progressBar" value="60" max="100"></progress></div>
-                        <div class="skills__skill">HTML <progress class = 'progress'id="progressBar" value="58" max="100"></progress></div>
-                        <div class="skills__skill">Python <progress class = 'progress'id="progressBar" value="55" max="100"></progress></div>
-                        <div class="skills__skill">CSS <progress class = 'progress'id="progressBar" value="47" max="100"></progress></div>
-                        <div class="skills__skill">VSCode <progress class = 'progress'id="progressBar" value="80" max="100"></progress></div>
-                        <div class="skills__skill">React <progress class = 'progress'id="progressBar" value="65" max="100"></progress></div>
-                        <div class="skills__skill">GIT <progress class = 'progress'id="progressBar" value="80" max="100"></progress></div>
-                        <div class="skills__skill">Express <progress class = 'progress'id="progressBar" value="65" max="100"></progress></div>
-                        <div class="skills__skill">SQL <progress class = 'progress'id="progressBar" value="45" max="100"></progress></div>
-                        <div class="skills__skill">MongoDB <progress class = 'progress'id="progressBar" value="65" max="100"></progress></div>
-                        <div class="skills__skill">EJS <progress class = 'progress'id="progressBar" value="47" max="100"></progress></div>
-                        <div class="skills__skill">Django <progress class = 'progress'id="progressBar" value="65" max="100"></progress></div>
-                        <div class="skills__skill">Microsoft Suite <progress class = 'progress'id="progressBar" value="83" max="100"></progress></div>
-                        <div class="skills__skill">Google Suite <progress class = 'progress'id="progressBar" value="92" max="100"></progress></div>
-                        <div class="skills__skill">RESTful Routing <progress class = 'progress'id="progressBar" value="56" max="100"></progress></div>
-                        <div class="skills__skill">JSX <progress class = 'progress'id="progressBar" value="60" max="100"></progress></div>
-                        <div class="skills__skill">NodeJS <progress class = 'progress'id="progressBar" value="49" max="100"></progress></div>
-                        <div class="skills__skill">GIT Version Control <progress class = 'progress'id="progressBar" value="70" max="100"></progress></div>
-                    </div>
-            </div>
+const skills = [
+    { name: "JavaScript", progress: 60 },
+    { name: "HTML", progress: 58 },
+    { name: "Python", progress: 55 },
+    { name: "CSS", progress: 47 },
+    { name: "VSCode", progress: 80 },
+    { name: "React", progress: 65 },
+    { name: "GIT", progress: 80 },
+    { name: "SQL", progress: 58 },
+    { name: "Express", progress: 52 },
+    { name: "MongoDB", progress: 58 },
+    { name: "EJS", progress: 58 },
+    { name: "Django", progress: 65 },
+    { name: "Microsoft Suite", progress: 83 },
+    { name: "Google Suite", progress: 92 },
+    { name: "RESTful Routing", progress: 60 },
+    { name: "NodeJS", progress: 52 },
+    { name: "GIT Version Control", progress: 70 },
+  ];
 
+const Skill = React.forwardRef(({ name, progress, isVisible }, ref) => (
+  <div ref={ref} className={`skills__skill ${isVisible ? 'animate' : ''}`}>
+    {name} <progress className='progress' value={isVisible ? progress : 0} max="100"></progress>
+  </div>
+));
 
-        </main>
-    )
+export default function SkillsPage() {
+  const [visibleSkills, setVisibleSkills] = useState(new Set());
+  const skillsRef = useRef(skills.map(() => React.createRef()));
+
+  useEffect(() => {
+    const currentSkillsRef = skillsRef.current; // Local variable referencing skillsRef.current
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setVisibleSkills(prevVisibleSkills => new Set(prevVisibleSkills.add(index)));
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    currentSkillsRef.forEach((ref, index) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    // Cleanup function using the local variable
+    return () => {
+      currentSkillsRef.forEach(ref => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
+
+  return (
+    <main>
+      <div className="content-skills">
+        <header className="content-title">Skills</header>
+        <div className="skills">
+          {skills.map((skill, index) => (
+            <Skill
+              key={index}
+              ref={skillsRef.current[index]}
+              name={skill.name}
+              progress={skill.progress}
+              isVisible={visibleSkills.has(index)}
+            />
+          ))}
+        </div>
+      </div>
+    </main>
+  );
 }

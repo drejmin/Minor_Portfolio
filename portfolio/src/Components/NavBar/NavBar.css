@@ -4,12 +4,14 @@
     overflow: hidden;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 96%;
     min-height: 40px;
+    max-height: 50px;
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .nav-list {

@@ -4,8 +4,8 @@ export default function ProjectsPage(){
     return (
         <main>
             <section id="projects">
-                <header class='content-title'>Projects</header>
-                    <article class="project">
+                <header className='content-title'>Projects</header>
+                    <article className="project">
                         <h3><a href="https://django-cool-app-1-941f9f541496.herokuapp.com/" target="_blank" rel='noreferrer'>Forget Me Not</a></h3>
                         <p>Refrigerator tracking app that allows you to track items and expiration dates,
                         upload receipts and get reminders when they are about to perish or go bad. The 
@@ -15,7 +15,7 @@ export default function ProjectsPage(){
                             a work in progress but is still being updated.
                         </p>
                     </article>
-                    <article class="project">
+                    <article className="project">
                         <h3><a  href="https://notes-on-notes-036102fff03f.herokuapp.com/notes"target="_blank" rel='noreferrer'>Notes on Notes</a></h3>
                         <p >Notes on notes is a sharing app that allows users to upload, search, create, and view notes 
                         and share them with other users. The site uses Google Oauth for user login, mongodb for data 
@@ -24,7 +24,7 @@ export default function ProjectsPage(){
                         is still being updated.
                         </p>
                     </article>
-                    <article class="project">
+                    <article className="project">
                         <h3 ><a href="https://reachout-f4d9228bef9f.herokuapp.com/" target="_blank" rel='noreferrer'>Reach Out</a></h3>
                         <p>Chat app that allows people to join and create a chat room that is tailored around mental health 
                         and making connections. This app is built using a MERN stack. MongoDB for the database and storage, 
