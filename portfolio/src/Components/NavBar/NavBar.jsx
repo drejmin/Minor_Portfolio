@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './NavBar.css';
 
-const NavItem = ({ href, title }) => (
-  <li className='choice'>
-    <a className='choice' href={href}>{title}</a>
+const NavItem = ({ onNavigate, sectionId, title }) => (
+  <li className='choice' onClick={()=> onNavigate(sectionId)}>
+    <a className='choice'>{title}</a>
   </li>
 );
 
-export default function NavBar() {
+export default function NavBar({onNavigate}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,10 +15,10 @@ export default function NavBar() {
   };
 
   const navItems = [
-    { href: "/HomePage", title: "Home" },
-    { href: "/ProjectsPage", title: "Projects" },
-    { href: "/SkillsPage", title: "Skills" },
-    { href: "/AboutPage", title: "About" }
+    { sectionId: "HomePage", title: "Home" },
+    { sectionId: "ProjectsPage", title: "Projects" },
+    { sectionId: "SkillsPage", title: "Skills" },
+    { sectionId: "AboutPage", title: "About" }
   ];
 
   return (
@@ -30,7 +30,7 @@ export default function NavBar() {
       </div>
       <ul className={isOpen ? 'nav-list active' : 'nav-list'}>
         {navItems.map((item, index) => (
-          <NavItem key={index} href={item.href} title={item.title} />
+          <NavItem key={index} onNavigate={onNavigate} sectionId={item.sectionId} title={item.title} />
         ))}
       </ul>
     </nav>

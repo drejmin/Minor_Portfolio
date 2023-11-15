@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes , Route} from 'react-router-dom';
+// import {Routes , Route} from 'react-router-dom';
 import Navbar from './Components/NavBar/NavBar';
 import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
 import SkillsPage from './Pages/SkillsPage/SkillsPage';
@@ -10,23 +10,18 @@ import emailLogo from './Components/Images/emailLogo.png';
 import GitHubLogo from './Components/Images/GitHubLogo.png';
 import linkedinLogo from './Components/Images/linkedinLogo.png';
 
-const scrollToContact = () => {
-  const contactSection = document.getElementById('contact');
-  contactSection.scrollIntoView({ behavior: 'smooth' });
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 };
 
 function App() {
   return (
     <main className="App">
-      <Navbar/>
-      <Routes>
-          <Route path="/HomePage" element={<HomePage/>} />
-          <Route path="/AboutPage" element={<AboutPage/>} />
-          <Route path="/SkillsPage" element={<SkillsPage/>} />
-          <Route path="/ProjectsPage" element={<ProjectsPage/>} />
-      </Routes>
-      
-      {/* <section className="App-header" id="HomePage">{<HomePage/>}</section> */}
+      <Navbar onNavigate={(sectionId) => scrollToSection(sectionId)} />
+      <section className="App-header"          id="HomePage">{<HomePage/>}</section>
       <section className="full-height-section" id="ProjectsPage">{<ProjectsPage/>}</section>
       <section className="full-height-section" id="SkillsPage">{<SkillsPage/>}</section>
       <section className="full-height-section" id="AboutPage">{<AboutPage/>}</section>
@@ -39,7 +34,7 @@ function App() {
             <a href={"http://www.linkedin.com/in/deandre-minor92"} target="_blank" rel='noreferrer'><img class = 'logo' src={linkedinLogo} alt='linkedin icon'/></a>
         </div>
       </section>
-      <button id="contactButton" onClick={scrollToContact}>Contact</button>
+      <button id="contactButton" onClick={(sectionId) => scrollToSection('contact')}>Contact</button>
     </main>
   );
 }
