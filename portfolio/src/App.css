@@ -101,6 +101,7 @@ html {
 @media screen and (max-width: 600px) {
   body {
     width: 100%;
+    font-size: large;
   }
 
 }
