@@ -18,7 +18,6 @@ const scrollToContact = () => {
 function App() {
   return (
     <main className="App">
-      <>
       <Navbar/>
       <Routes>
           <Route path="/HomePage" element={<HomePage/>} />
@@ -26,8 +25,8 @@ function App() {
           <Route path="/SkillsPage" element={<SkillsPage/>} />
           <Route path="/ProjectsPage" element={<ProjectsPage/>} />
       </Routes>
-      </>
-      <section className="full-height-section" id="HomePage">{<HomePage/>}</section>
+      
+      {/* <section className="App-header" id="HomePage">{<HomePage/>}</section> */}
       <section className="full-height-section" id="ProjectsPage">{<ProjectsPage/>}</section>
       <section className="full-height-section" id="SkillsPage">{<SkillsPage/>}</section>
       <section className="full-height-section" id="AboutPage">{<AboutPage/>}</section>

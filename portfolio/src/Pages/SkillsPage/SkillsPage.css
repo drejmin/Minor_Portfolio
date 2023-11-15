@@ -1,6 +1,6 @@
 .content-title {
     font-size: x-large;
-    font-weight: bold; /* Changed from font-style */
+    font-weight: bold; 
     margin: 4%;
 }
 
@@ -48,4 +48,22 @@
 @keyframes progressBar {
     0% { width: 0; }
     100% { width: 100%; }
+}
+
+@media screen and (max-width:600) {
+    .skills{
+        display: block;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 3% 7%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -8px 16px rgba(0, 0, 0, 0.2);
+        border: 1px solid darkgrey;
+        border-radius: 12px;
+        padding: 3%;
+        font-size: auto;
+    }
 }
