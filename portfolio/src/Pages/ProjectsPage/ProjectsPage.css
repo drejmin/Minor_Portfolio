@@ -1,11 +1,47 @@
-.content-title{
-    font-size: x-large;
-    font-style: bold;
-    margin: 4%;
+--------------- Project Card --------------
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust this as needed */
+    min-height: 100vh;
+  }
+  
+  @media (max-width: 768px) {
+    .projects-container {
+      flex-direction: column;
+      align-items: center; /* Center the cards vertically */
+    }
+  }
+  
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    float: left;
+    padding: 10px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 60%;
+  }
 
-}
-
-.project{
+  .project-card__project-card{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-image {
+    width: 70%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .project-info {
+    padding: 15px;
     border: 1px solid darkgrey;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
@@ -15,23 +51,66 @@
     padding: 20px;
     margin: 2%;
     display: block;
-    width: 80%;
     text-align: center;
     padding-block-end: auto;
     margin-left: 7%;
-}
-
-.project>h3{
-    margin:3px;
-    align-items: center;
-    color: navy;
-    
-}
-
-.project>p{
-    margin-bottom: 2%;
-}
-
-.project:hover{
+    max-width: 30vmin;
+    min-width: 20vmin;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-title {
+    margin: 0 0 10px 0;
+  }
+  
+  .project-description {
+    color: #666;
+  }
+  
+  .project-links {
+    margin-top: 15px;
+  }
+  
+  .project-demo-link,
+  .project-source-link {
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    border: 1px solid darkgrey;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.2),
+                inset 0 -4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2%;
+    text-align: center;
+    padding: 1%;
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .project-demo-link:hover,
+  .project-source-link:hover {
     background-color: lightblue;
+
+  }
+  
+  @media (max-width: 768px) {
+    .project-card {
+      padding:10px;
+      flex-direction: column;
+      width: auto;
+      font-size: auto;
+    }
+  }
+
+------------ Project Page ----------------------
+.content-title{
+    font-size: x-large;
+    font-style: bold;
+    margin: 4%;
+}
+.projects{
+    min-height: 100vh;
 }

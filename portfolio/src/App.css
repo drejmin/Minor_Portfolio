@@ -1,13 +1,15 @@
-/* Reset some default browser styles */
+Reset some default browser styles
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
+    font-size: auto;
+
   }
   
 /* Add a background color and some padding to the page */
 body {
 background-color: #f2f2f2;
-padding: 20px;
+
 }
 
 /* Style the header */
@@ -40,7 +42,7 @@ padding: 3%;
 }
 
 #contactButton {
-  position: fixed;
+  position: sticky;
   bottom: 20px; /* Distance from bottom */
   right: 20px; /* Distance from right */
   padding: 10px 20px;
@@ -57,11 +59,12 @@ padding: 3%;
 
 .App {
   text-align: center;
+  width: auto;
+  justify-content: center;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,11 +89,12 @@ padding: 3%;
 }
 
 .full-height-section {
-  height: 100vh;
-  width: 100%; /* Optional, if you also want the section to be full width */
+  min-height: 100vh;
+  width: auto;
   display: flex;
   justify-content: center;
-  align-items: center; /* These flex properties center content vertically and horizontally */
+  align-items: center;
+  min-width: 400px;
 }
 
 html {
@@ -98,10 +102,11 @@ html {
 }
 
 /* make the site availiable for smaller screens */
-@media screen and (max-width: 600px) {
-  body {
-    width: 100%;
-    font-size: large;
-  }
 
+  @media (min-width: 48em) {
+    body {
+      width: 100%;
+      font-size: large;
+    }
+ 
 }

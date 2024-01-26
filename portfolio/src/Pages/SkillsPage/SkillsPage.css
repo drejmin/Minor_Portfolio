@@ -3,6 +3,9 @@
     font-weight: bold; 
     margin: 4%;
 }
+.content-skills{
+    min-height: 100vh;
+}
 
 .skills {
     display: flex;

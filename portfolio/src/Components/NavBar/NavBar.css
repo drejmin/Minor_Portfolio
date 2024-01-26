@@ -4,28 +4,29 @@
     overflow: hidden;
     position: fixed;
     top: 0;
-    width: 96%;
+    min-width: 400px ;
+    width: auto; /* Adjusted to 100% for full width */
     min-height: 40px;
     max-height: 50px;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Default justify-content */
     align-items: center;
-
+    padding: 1rem 0; /* Added padding for consistency */
 }
 
 .nav-list {
     list-style-type: none;
-    padding: 0;
     margin: 0;
-    display: flex; /* Changed to flex for horizontal layout */
+    padding: 0;
+    display: none; /* Default to none for mobile-first approach */
     align-items: center;
     width: 100%;
     justify-content: center;
 }
 
 .nav-list.active {
-    display: flex; /* Ensure it's flex when active */
+    display: flex; /* Show when active, applies to all views */
 }
 
 .choice {
@@ -43,30 +44,31 @@
 
 /* Desktop View */
 @media (min-width: 769px) {
-    .choice {
-        margin-left: 6%;
-        margin-right: 6%;
-        text-align: center;
-    }
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
     .nav-list {
-        display: none; /* Hide by default on mobile */
+        display: flex; /* Flex display for desktop */
     }
 
-    .nav-list.active {
-        display: flex; /* Show when active */
+    .choice {
+        margin: 0 6%; /* Margin to space out choices */
+        text-align: center;
     }
 
     .navbar {
+        justify-content: center; /* Center items in navbar */
+        padding: 0; /* Remove padding for desktop */
+        width:100%;
+    }
+}
+
+/* Mobile View Specifics */
+@media (max-width: 768px) {
+    .navbar {
         justify-content: space-between;
-        padding: 1rem 2rem;
+        width:100%;
     }
 
     .choice {
-        text-align: left;
+        text-align: left; /* Align text to the left on mobile */
     }
 
     .menu-toggle {
