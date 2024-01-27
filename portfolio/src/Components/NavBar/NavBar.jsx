@@ -43,6 +43,7 @@ const NavBar = ({ onNavigate }) => {
       <ul className={`nav-list ${isOpen ? 'active' : ''}`}>
         {navItems.map((item, index) => (
           <NavItem key={index} onNavigate={onNavigate} sectionId={item.sectionId} title={item.title} />
+          
         ))}
       </ul>
     </nav>
