@@ -6,8 +6,8 @@
     top: 0;
     min-width: 400px ;
     width: auto; /* Adjusted to 100% for full width */
-    min-height: 40px;
-    max-height: 50px;
+    min-height: 3vh;
+    max-height: 4vh;
     z-index: 1000;
     display: flex;
     justify-content: center; /* Default justify-content */
